@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bear’s Den | Private Strength & Movement Coaching (Lambertville, NJ)</title>
+  <meta name="description" content="Appointment-only private strength & movement coaching for adults 45+. Lambertville, NJ. Membership $450/month. Start with a $75 Movement & Strength Assessment." />
+
+  <!-- Favicon (works only if the file actually exists at this exact path) -->
+  <link rel="icon" type="image/png" href="./logo.png" />
+
+  <style>
+    :root{
+      --bg:#0b3b6f; /* deep blue */
+      --bg2:#062e58; /* darker blue */
+      --card:#ffffff;
+      --ink:#0b1a2a;
+      --muted:#516173;
+      --accent:#1e5aa8; /* mid blue */
+      --soft:#e9f0fb; /* light blue */
+      --ring:rgba(30,90,168,.25);
+      --radius:18px;
+      --shadow:0 12px 30px rgba(0,0,0,.15);
+      --max:1040px;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--ink);
+      background:linear-gradient(160deg,var(--bg),var(--bg2));
+    }
+    a{color:inherit}
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
+    header{
+      color:#fff;
+      padding:22px 0 10px;
+    }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+    }
+    .brand{
+      display:flex; align-items:center; gap:14px;
+    }
+
+    /* ===== Logo (top-left) — robust GitHub Pages loading + fallback ===== */
+    .logo{
+      width:66px;
+      height:66px;
+      border-radius:50%;
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(255,255,255,.35);
+      overflow:hidden;
+      display:grid;
+      place-items:center;
+      box-shadow:0 10px 22px rgba(0,0,0,.18);
+      flex:0 0 66px;
+      position:relative;
+    }
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:contain; /* better for logos */
+      padding:6px; /* gives the mark breathing room */
+      display:block;
+      background:transparent;
+    }
+
+    /* show fallback immediately so you never get a blank circle */
+    .logoFallback{
+      position:absolute;
+      inset:0;
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      letter-spacing:.5px;
+      color:var(--bg2);
+      background:rgba(255,255,255,.92);
+    }
+
+    .title{
+      display:flex; flex-direction:column; line-height:1.05;
+    }
+    .title .name{font-size:22px; font-weight:800; letter-spacing:.2px}
+    .title .sub{opacity:.9; font-weight:600}
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap}
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:11px 14px;
+      border-radius:999px;
+      font-weight:700;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.28);
+      background:rgba(255,255,255,.10);
+      color:#fff;
+      transition:transform .08s ease, background .15s ease;
+      backdrop-filter: blur(6px);
+    }
+    .btn:hover{background:rgba(255,255,255,.16)}
+    .btn:active{transform:translateY(1px)}
+    .btnPrimary{
+      background:#fff; color:var(--bg2);
+      border-color:rgba(255,255,255,.9);
+    }
+    .btnPrimary:hover{background:rgba(255,255,255,.92)}
+
+    .hero{
+      margin-top:18px;
+      background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.90));
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .heroInner{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:0;
+    }
+    @media (max-width: 860px){
+      .heroInner{grid-template-columns:1fr}
+    }
+    .heroCopy{
+      padding:28px 26px 26px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      background:var(--soft);
+      color:var(--bg2);
+      font-weight:800;
+      letter-spacing:.2px;
+      font-size:12.5px;
+    }
+    h1{
+      margin:12px 0 10px;
+      font-size:36px;
+      letter-spacing:-.6px;
+    }
+    @media (max-width: 460px){ h1{font-size:30px} }
+    .lead{
+      margin:0 0 16px;
+      font-size:16.5px;
+      color:var(--muted);
+      line-height:1.55;
+      max-width:60ch;
+    }
+    .pillRow{display:flex; gap:10px; flex-wrap:wrap; margin:16px 0 0}
+    .pill{
+      background:#fff;
+      border:1px solid rgba(6,46,88,.12);
+      padding:10px 12px;
+      border-radius:999px;
+      font-weight:750;
+      color:var(--bg2);
+      box-shadow:0 6px 16px rgba(0,0,0,.06);
+    }
+
+    /* ✅ pill as a link (same look, clickable) */
+    .pillLink{
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      transition:transform .08s ease;
+    }
+    .pillLink:hover{transform:translateY(-1px)}
+    .pillLink:active{transform:translateY(0)}
+
+    .heroSide{
+      padding:26px;
+      background:radial-gradient(900px 240px at 20% 10%, rgba(30,90,168,.22), transparent 55%),
+                 radial-gradient(700px 240px at 80% 30%, rgba(30,90,168,.16), transparent 55%),
+                 rgba(233,240,251,.8);
+      border-left:1px solid rgba(6,46,88,.08);
+    }
+    @media (max-width: 860px){
+      .heroSide{border-left:none; border-top:1px solid rgba(6,46,88,.08)}
+    }
+    .card{
+      background:#fff;
+      border-radius:14px;
+      padding:16px 16px 14px;
+      border:1px solid rgba(6,46,88,.10);
+      box-shadow:0 10px 22px rgba(0,0,0,.07);
+    }
+    .card h3{margin:0 0 6px; font-size:16px}
+    .price{
+      font-size:30px;
+      font-weight:900;
+      letter-spacing:-.5px;
+      margin:2px 0 6px;
+      color:var(--bg2);
+    }
+    .small{color:var(--muted); font-size:13.5px; line-height:1.45}
+    .divider{height:1px; background:rgba(6,46,88,.10); margin:14px 0}
+    .list{margin:10px 0 0; padding:0; list-style:none}
+    .list li{
+      display:flex; gap:10px;
+      padding:7px 0;
+      color:var(--ink);
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background:var(--accent);
+      margin-top:6px;
+      flex:0 0 10px;
+      box-shadow:0 0 0 6px var(--ring);
+    }
+
+    section{
+      margin-top:20px;
+      background:rgba(255,255,255,.92);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:18px;
+    }
+    @media (max-width: 860px){ .grid{grid-template-columns:1fr} }
+    h2{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-.2px;
+    }
+    p{margin:0 0 10px; color:var(--muted); line-height:1.6}
+    .bullets{margin:8px 0 0; padding-left:18px; color:var(--muted); line-height:1.7}
+    .note{
+      margin-top:10px;
+      padding:12px 12px;
+      border-radius:14px;
+      background:var(--soft);
+      border:1px solid rgba(6,46,88,.10);
+      color:var(--bg2);
+      font-weight:700;
+    }
+    .contactBox{
+      display:grid;
+      gap:10px;
+      padding:16px;
+      background:#fff;
+      border-radius:14px;
+      border:1px solid rgba(6,46,88,.10);
+    }
+    .contactBox a{
+      text-decoration:none;
+      font-weight:850;
+      color:var(--bg2);
+    }
+    .contactRow{
+      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      margin-top:10px;
+    }
+    footer{
+      margin-top:18px;
+      color:rgba(255,255,255,.88);
+      font-size:12.5px;
+      line-height:1.5;
+      opacity:.95;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="topbar">
+        <div class="brand">
+          <!-- TOP-LEFT LOGO -->
+          <div class="logo" aria-label="Bear’s Den logo">
+            <div class="logoFallback" id="logoFallback">BD</div>
+
+            <img
+              src="./logo.png"
+              alt="Bear’s Den"
+              loading="eager"
+              decoding="async"
+              onload="document.getElementById('logoFallback').style.display='none';"
+              onerror="
+                if(this.dataset.try==='1'){ this.src='./Logo.png'; this.dataset.try='2'; }
+                else if(this.dataset.try==='2'){ this.src='./logo.jpg'; this.dataset.try='3'; }
+                else if(this.dataset.try==='3'){ this.src='./logo.jpeg'; this.dataset.try='4'; }
+                else if(this.dataset.try==='4'){ this.src='./logo.webp'; this.dataset.try='5'; }
+                else { this.style.display='none'; document.getElementById('logoFallback').style.display='grid'; }
+              "
+              data-try="1"
+            />
+          </div>
+
+          <div class="title">
+            <div class="name">Bear’s Den</div>
+            <div class="sub">Private Strength &amp; Movement Coaching • Lambertville, NJ</div>
+          </div>
+        </div>
+
+        <!-- ✅ Header links (accessible anywhere) -->
+        <div class="ctaRow">
+          <a class="btn" href="./testimonials.html">Testimonials</a>
+          <a class="btn btnPrimary" href="tel:+16093021652">Call 609-302-1652</a>
+          <a class="btn" href="mailto:bearsden12125@gmail.com">Email</a>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div class="heroInner">
+        <div class="heroCopy">
+          <div class="badge">This is not a gym • Appointment-only • Adults 45+</div>
+          <h1>Strength, balance, and confidence—without crowds.</h1>
+          <p class="lead">
+            Bear’s Den is a quiet, private studio built for adults who want safer training, clearer progression,
+            and real oversight. If you’re tired of guessing what’s “safe,” or you’re done with physical therapy
+            but not ready to be on your own, this is what we do.
+          </p>
+
+          <!-- ✅ Pill row + 4th interactive Testimonials bubble -->
+          <div class="pillRow">
+            <div class="pill">Joint-safe strength</div>
+            <div class="pill">Balance &amp; stability</div>
+            <div class="pill">Sustainable progress</div>
+            <a class="pill pillLink" href="./testimonials.html">Testimonials</a>
+          </div>
+        </div>
+
+        <div class="heroSide">
+          <div class="card">
+            <h3>Membership</h3>
+            <div class="price">$450 <span style="font-size:16px;font-weight:800;color:var(--muted)">/ month</span></div>
+            <div class="small">(~$15 per day) • Limited clients • By appointment only</div>
+
+            <div class="divider"></div>
+
+            <h3>Start Here</h3>
+            <div class="price">$75 <span style="font-size:16px;font-weight:800;color:var(--muted)">Assessment</span></div>
+            <div class="small">
+              Movement &amp; Strength Assessment (1-on-1). We look at how you move, where limitations exist,
+              and what a safe plan should be.
+            </div>
+
+            <div class="divider"></div>
+
+            <ul class="list">
+              <li><span class="dot" aria-hidden="true"></span><span><strong>Private</strong> &amp; very small semi-private sessions</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span><strong>Calm</strong>, clean, professional environment</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span><strong>Built for</strong> aging bodies and long-term progress</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section>
+      <div class="grid">
+        <div>
+          <h2>Who this is for</h2>
+          <p>Most clients are between <strong>45 and 70+</strong> and want to:</p>
+          <ul class="bullets">
+            <li>Move with less pain and stiffness</li>
+            <li>Improve balance and confidence</li>
+            <li>Build strength safely (without fear of injury)</li>
+            <li>Stay active and independent as they age</li>
+            <li>Stop guessing and follow a structured plan</li>
+          </ul>
+          <div class="note">You don’t need gym experience. You just need consistency.</div>
+        </div>
+
+        <div>
+          <h2>How it works</h2>
+          <p>
+            Every new client begins with a <strong>Movement &amp; Strength Assessment</strong>.
+            You’ll leave with a clear recommendation and next steps—no pressure.
+          </p>
+          <div class="contactBox" role="region" aria-label="Contact information">
+            <div><strong>Service Area:</strong> Lambertville, NJ</div>
+            <div><strong>Studio location:</strong> Private location (address provided after booking)</div>
+            <div><strong>Phone:</strong> <a href="tel:+16093021652">609-302-1652</a></div>
+            <div><strong>Email:</strong> <a href="mailto:bearsden12125@gmail.com">bearsden12125@gmail.com</a></div>
+
+            <div class="contactRow">
+              <a class="btn btnPrimary" href="tel:+16093021652">Book by phone</a>
+              <a class="btn" href="mailto:bearsden12125@gmail.com?subject=Assessment%20Request%20-%20Bear%27s%20Den&body=Hi%20Jaaron,%0A%0AI%E2%80%99d%20like%20to%20schedule%20a%20Movement%20%26%20Strength%20Assessment.%0A%0AName:%0APhone:%0ABest%20days/times:%0AMain%20goal%20or%20issue:%0A%0AThanks!">Request by email</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>What this studio is not</h2>
+      <p>
+        If you’re looking for loud classes, crowded gyms, quick fixes, or “push through pain” training,
+        this is probably not the right fit.
+      </p>
+      <p>
+        If you want <strong>personal attention</strong>, <strong>safe progression</strong>, and a sustainable approach to building strength
+        for real life—this is exactly what Bear’s Den was built for.
+      </p>
+    </section>
+
+    <footer>
+      <div><strong>Bear’s Den</strong> • Private Strength &amp; Movement Coaching • Lambertville, NJ</div>
+      <div>Membership: $450/month • Movement &amp; Strength Assessment: $75 • By appointment only</div>
+    </footer>
+
+  </div>
+</body>
+</html>
