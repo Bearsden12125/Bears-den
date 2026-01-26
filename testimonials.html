@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Bear’s Den | Testimonials</title>
+  <meta name="description" content="Client testimonials for Bear’s Den. Submissions are reviewed before posting." />
+  <link rel="icon" type="image/png" href="./logo.png" />
+
+  <style>
+    :root{
+      --bg:#0b3b6f;
+      --bg2:#062e58;
+      --card:#ffffff;
+      --ink:#0b1a2a;
+      --muted:#516173;
+      --accent:#1e5aa8;
+      --soft:#e9f0fb;
+      --radius:18px;
+      --shadow:0 12px 30px rgba(0,0,0,.15);
+      --max:1040px;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--ink);
+      background:linear-gradient(160deg,var(--bg),var(--bg2));
+    }
+    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
+    a{color:inherit}
+
+    header{
+      color:#fff;
+      padding:10px 0 14px;
+    }
+    .topbar{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:14px;
+    }
+    .logo{
+      width:66px;height:66px;border-radius:50%;
+      background:rgba(255,255,255,.92);
+      border:1px solid rgba(255,255,255,.35);
+      overflow:hidden;
+      display:grid;
+      place-items:center;
+      box-shadow:0 10px 22px rgba(0,0,0,.18);
+    }
+    .logo img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      padding:6px;
+    }
+    .title{
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
+    }
+    .title .name{font-size:22px; font-weight:800}
+    .title .sub{opacity:.9; font-weight:600}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:11px 14px;
+      border-radius:999px;
+      font-weight:800;
+      text-decoration:none;
+      border:1px solid rgba(255,255,255,.28);
+      background:rgba(255,255,255,.10);
+      color:#fff;
+    }
+    .btn:hover{background:rgba(255,255,255,.16)}
+    .btnPrimary{
+      background:#fff;
+      color:var(--bg2);
+      border-color:rgba(255,255,255,.9);
+    }
+
+    section{
+      margin-top:18px;
+      background:rgba(255,255,255,.92);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+    h1{
+      margin:0 0 10px;
+      font-size:30px;
+      letter-spacing:-.4px;
+    }
+    p{
+      margin:0 0 10px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .emptyState{
+      margin-top:14px;
+      padding:18px;
+      border-radius:14px;
+      background:var(--soft);
+      border:1px solid rgba(6,46,88,.12);
+      font-weight:700;
+      color:var(--bg2);
+    }
+
+    .divider{
+      height:1px;
+      background:rgba(6,46,88,.10);
+      margin:18px 0;
+    }
+
+    .contactBox{
+      display:grid;
+      gap:10px;
+      padding:16px;
+      background:#fff;
+      border-radius:14px;
+      border:1px solid rgba(6,46,88,.10);
+    }
+    .contactRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .small{
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.45;
+    }
+
+    footer{
+      margin-top:18px;
+      color:rgba(255,255,255,.88);
+      font-size:12.5px;
+      line-height:1.5;
+      opacity:.95;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+
+    <header>
+      <div class="topbar">
+        <div class="brand">
+          <div class="logo">
+            <img src="./logo.png" alt="Bear’s Den logo">
+          </div>
+          <div class="title">
+            <div class="name">Bear’s Den</div>
+            <div class="sub">Testimonials • Lambertville, NJ</div>
+          </div>
+        </div>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="./index.html">Back to home</a>
+          <a class="btn" href="mailto:bearsden12125@gmail.com">Email</a>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <h1>Client Testimonials</h1>
+      <p>
+        Feedback from real clients.  
+        <strong>All submissions are reviewed before posting.</strong>
+      </p>
+
+      <!-- No testimonials yet -->
+      <div class="emptyState">
+        No testimonials have been posted yet.
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="contactBox">
+        <strong>Want to submit a testimonial?</strong>
+        <div class="small">
+          Click below to send a pre-filled email. Your testimonial is reviewed before posting to keep this page
+          professional, accurate, and respectful.
+        </div>
+
+        <div class="contactRow">
+          <a class="btn btnPrimary"
+             href="mailto:bearsden12125@gmail.com?subject=Testimonial%20Submission%20-%20Bear%27s%20Den&body=Hi%20Jaaron,%0A%0AHere%E2%80%99s%20my%20testimonial:%0A%0A%5BWrite%20your%20testimonial%20here%5D%0A%0AName%20(first%20name%20only%20or%20initials):%0AAge%20(optional):%0A%0AThanks!">
+            Submit by email
+          </a>
+
+          <a class="btn" href="tel:+16093021652">Or call 609-302-1652</a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div><strong>Bear’s Den</strong> • Private Strength &amp; Movement Coaching • Lambertville, NJ</div>
+      <div>Membership: $450/month • Movement &amp; Strength Assessment: $75 • By appointment only</div>
+    </footer>
+
+  </div>
+</body>
+</html>
