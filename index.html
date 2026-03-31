@@ -1,23 +1,24 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bear’s Den | Private Strength & Movement Coaching (Lambertville, NJ)</title>
-  <meta name="description" content="Appointment-only private strength & movement coaching for adults 45+. Lambertville, NJ. Membership $450/month. Start with a $75 Movement & Strength Assessment." />
+  <meta name="description" content="Appointment-only private strength & movement coaching for adults 45+. Lambertville, NJ. Membership $450/month. Start with a $75 Movement & Strength Assessment. In-home training available from $60 depending on distance." />
 
-  <!-- Favicon (works only if the file actually exists at this exact path) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="./logo.png" />
 
   <style>
     :root{
-      --bg:#0b3b6f; /* deep blue */
-      --bg2:#062e58; /* darker blue */
+      --bg:#0b3b6f;
+      --bg2:#062e58;
       --card:#ffffff;
       --ink:#0b1a2a;
       --muted:#516173;
-      --accent:#1e5aa8; /* mid blue */
-      --soft:#e9f0fb; /* light blue */
+      --accent:#1e5aa8;
+      --soft:#e9f0fb;
       --ring:rgba(30,90,168,.25);
       --radius:18px;
       --shadow:0 12px 30px rgba(0,0,0,.15);
@@ -44,7 +45,6 @@
       display:flex; align-items:center; gap:14px;
     }
 
-    /* ===== Logo (top-left) — robust GitHub Pages loading + fallback ===== */
     .logo{
       width:66px;
       height:66px;
@@ -61,13 +61,11 @@
     .logo img{
       width:100%;
       height:100%;
-      object-fit:contain; /* better for logos */
-      padding:6px; /* gives the mark breathing room */
+      object-fit:contain;
+      padding:6px;
       display:block;
       background:transparent;
     }
-
-    /* show fallback immediately so you never get a blank circle */
     .logoFallback{
       position:absolute;
       inset:0;
@@ -158,18 +156,6 @@
       color:var(--bg2);
       box-shadow:0 6px 16px rgba(0,0,0,.06);
     }
-
-    /* ✅ pill as a link (same look, clickable) */
-    .pillLink{
-      text-decoration:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      transition:transform .08s ease;
-    }
-    .pillLink:hover{transform:translateY(-1px)}
-    .pillLink:active{transform:translateY(0)}
 
     .heroSide{
       padding:26px;
@@ -267,17 +253,13 @@
     }
   </style>
 </head>
-
 <body>
   <div class="wrap">
-
     <header>
       <div class="topbar">
         <div class="brand">
-          <!-- TOP-LEFT LOGO -->
           <div class="logo" aria-label="Bear’s Den logo">
             <div class="logoFallback" id="logoFallback">BD</div>
-
             <img
               src="./logo.png"
               alt="Bear’s Den"
@@ -294,16 +276,12 @@
               data-try="1"
             />
           </div>
-
           <div class="title">
             <div class="name">Bear’s Den</div>
             <div class="sub">Private Strength &amp; Movement Coaching • Lambertville, NJ</div>
           </div>
         </div>
-
-        <!-- ✅ Header links (accessible anywhere) -->
         <div class="ctaRow">
-          <a class="btn" href="./testimonials.html">Testimonials</a>
           <a class="btn btnPrimary" href="tel:+16093021652">Call 609-302-1652</a>
           <a class="btn" href="mailto:bearsden12125@gmail.com">Email</a>
         </div>
@@ -320,13 +298,10 @@
             and real oversight. If you’re tired of guessing what’s “safe,” or you’re done with physical therapy
             but not ready to be on your own, this is what we do.
           </p>
-
-          <!-- ✅ Pill row + 4th interactive Testimonials bubble -->
           <div class="pillRow">
             <div class="pill">Joint-safe strength</div>
             <div class="pill">Balance &amp; stability</div>
             <div class="pill">Sustainable progress</div>
-            <a class="pill pillLink" href="./testimonials.html">Testimonials</a>
           </div>
         </div>
 
@@ -383,10 +358,49 @@
             <div><strong>Studio location:</strong> Private location (address provided after booking)</div>
             <div><strong>Phone:</strong> <a href="tel:+16093021652">609-302-1652</a></div>
             <div><strong>Email:</strong> <a href="mailto:bearsden12125@gmail.com">bearsden12125@gmail.com</a></div>
-
             <div class="contactRow">
               <a class="btn btnPrimary" href="tel:+16093021652">Book by phone</a>
               <a class="btn" href="mailto:bearsden12125@gmail.com?subject=Assessment%20Request%20-%20Bear%27s%20Den&body=Hi%20Jaaron,%0A%0AI%E2%80%99d%20like%20to%20schedule%20a%20Movement%20%26%20Strength%20Assessment.%0A%0AName:%0APhone:%0ABest%20days/times:%0AMain%20goal%20or%20issue:%0A%0AThanks!">Request by email</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ NEW IN-HOME TRAINING SECTION -->
+    <section>
+      <div class="grid">
+        <div>
+          <h2>In-Home Training</h2>
+          <p>
+            Prefer to train in your own home? In-home sessions are available for clients who want a more convenient
+            option while still receiving personal instruction, structure, and accountability.
+          </p>
+          <ul class="bullets">
+            <li>1-on-1 coaching in your home</li>
+            <li>Convenient for busy schedules</li>
+            <li>Exercises tailored to your space and needs</li>
+            <li>Same focus on safety, progression, and real results</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="card">
+            <h3>In-Home Pricing</h3>
+            <div class="price">$60 <span style="font-size:16px;font-weight:800;color:var(--muted)">/ session</span></div>
+            <div class="small">
+              In-home pricing may increase depending on distance.
+            </div>
+
+            <div class="divider"></div>
+
+            <p class="small">
+              If you’re interested in in-home training, call or email with your location and goals to confirm availability and pricing.
+            </p>
+
+            <div class="contactRow">
+              <a class="btn btnPrimary" href="tel:+16093021652">Call about in-home training</a>
+              <a class="btn" href="mailto:bearsden12125@gmail.com?subject=In-Home%20Training%20Inquiry%20-%20Bear%27s%20Den&body=Hi%20Jaaron,%0A%0AI%E2%80%99m%20interested%20in%20in-home%20training.%0A%0ALocation:%0AMain%20goal:%0ABest%20days/times:%0A%0AThanks!">Request by email</a>
             </div>
           </div>
         </div>
@@ -409,7 +423,6 @@
       <div><strong>Bear’s Den</strong> • Private Strength &amp; Movement Coaching • Lambertville, NJ</div>
       <div>Membership: $450/month • Movement &amp; Strength Assessment: $75 • By appointment only</div>
     </footer>
-
   </div>
 </body>
 </html>
