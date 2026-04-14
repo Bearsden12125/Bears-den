@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Bear’s Den | Recovery</title>
-  <meta name="description" content="Recovery education and services at Bear’s Den, including myofascial cupping, cup dragging, and post-session recovery guidance." />
+  <meta name="description" content="Recovery education and support at Bear’s Den. Learn what recovery is, how it works, and explore cupping and Graston services." />
   <link rel="icon" type="image/png" href="./logo.png" />
 
   <style>
@@ -16,27 +16,35 @@
       --muted:#516173;
       --accent:#1e5aa8;
       --soft:#e9f0fb;
-      --soft2:#f6f9fe;
       --ring:rgba(30,90,168,.25);
       --radius:18px;
       --shadow:0 12px 30px rgba(0,0,0,.15);
       --max:1080px;
       --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
       font-family:var(--font);
       color:var(--ink);
       background:linear-gradient(160deg,var(--bg),var(--bg2));
     }
+
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:28px 18px 64px;
+    }
 
     header{
       color:#fff;
       padding:14px 0 10px;
     }
+
     .topbar{
       display:flex;
       align-items:center;
@@ -44,11 +52,13 @@
       gap:14px;
       flex-wrap:wrap;
     }
+
     .brand{
       display:flex;
       align-items:center;
       gap:14px;
     }
+
     .logo{
       width:66px;
       height:66px;
@@ -62,6 +72,7 @@
       flex:0 0 66px;
       position:relative;
     }
+
     .logo img{
       width:100%;
       height:100%;
@@ -70,6 +81,7 @@
       display:block;
       background:transparent;
     }
+
     .logoFallback{
       position:absolute;
       inset:0;
@@ -80,15 +92,30 @@
       color:var(--bg2);
       background:rgba(255,255,255,.92);
     }
+
     .title{
       display:flex;
       flex-direction:column;
       line-height:1.05;
     }
-    .title .name{font-size:22px; font-weight:800; letter-spacing:.2px}
-    .title .sub{opacity:.9; font-weight:600}
 
-    .ctaRow{display:flex; gap:10px; flex-wrap:wrap}
+    .title .name{
+      font-size:22px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .title .sub{
+      opacity:.9;
+      font-weight:600;
+    }
+
+    .ctaRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
     .btn{
       display:inline-flex;
       align-items:center;
@@ -103,13 +130,16 @@
       transition:transform .08s ease, background .15s ease;
       backdrop-filter: blur(6px);
     }
+
     .btn:hover{background:rgba(255,255,255,.16)}
     .btn:active{transform:translateY(1px)}
+
     .btnPrimary{
       background:#fff;
       color:var(--bg2);
       border-color:rgba(255,255,255,.9);
     }
+
     .btnPrimary:hover{background:rgba(255,255,255,.92)}
 
     .hero{
@@ -119,17 +149,21 @@
       box-shadow:var(--shadow);
       overflow:hidden;
     }
+
     .heroInner{
       display:grid;
       grid-template-columns:1.1fr .9fr;
       gap:0;
     }
+
     @media (max-width: 900px){
       .heroInner{grid-template-columns:1fr}
     }
+
     .heroCopy{
       padding:28px 26px 26px;
     }
+
     .badge{
       display:inline-flex;
       align-items:center;
@@ -142,12 +176,17 @@
       letter-spacing:.2px;
       font-size:12.5px;
     }
+
     h1{
       margin:12px 0 10px;
       font-size:36px;
       letter-spacing:-.6px;
     }
-    @media (max-width: 460px){ h1{font-size:30px} }
+
+    @media (max-width: 460px){
+      h1{font-size:30px}
+    }
+
     .lead{
       margin:0 0 14px;
       font-size:16.5px;
@@ -155,7 +194,14 @@
       line-height:1.55;
       max-width:62ch;
     }
-    .pillRow{display:flex; gap:10px; flex-wrap:wrap; margin:16px 0 0}
+
+    .pillRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:16px 0 0;
+    }
+
     .pill{
       background:#fff;
       border:1px solid rgba(6,46,88,.12);
@@ -164,18 +210,22 @@
       font-weight:750;
       color:var(--bg2);
       box-shadow:0 6px 16px rgba(0,0,0,.06);
+      text-decoration:none;
     }
 
     .heroSide{
       padding:26px;
-      background:radial-gradient(900px 240px at 20% 10%, rgba(30,90,168,.22), transparent 55%),
-                 radial-gradient(700px 240px at 80% 30%, rgba(30,90,168,.16), transparent 55%),
-                 rgba(233,240,251,.82);
+      background:
+        radial-gradient(900px 240px at 20% 10%, rgba(30,90,168,.22), transparent 55%),
+        radial-gradient(700px 240px at 80% 30%, rgba(30,90,168,.16), transparent 55%),
+        rgba(233,240,251,.82);
       border-left:1px solid rgba(6,46,88,.08);
     }
+
     @media (max-width: 900px){
       .heroSide{border-left:none; border-top:1px solid rgba(6,46,88,.08)}
     }
+
     .card{
       background:#fff;
       border-radius:14px;
@@ -183,16 +233,37 @@
       border:1px solid rgba(6,46,88,.10);
       box-shadow:0 10px 22px rgba(0,0,0,.07);
     }
-    .card h3{margin:0 0 8px; font-size:18px}
-    .small{color:var(--muted); font-size:13.5px; line-height:1.45}
-    .divider{height:1px; background:rgba(6,46,88,.10); margin:14px 0}
-    .list{margin:10px 0 0; padding:0; list-style:none}
+
+    .card h3{
+      margin:0 0 8px;
+      font-size:18px;
+    }
+
+    .small{
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.45;
+    }
+
+    .divider{
+      height:1px;
+      background:rgba(6,46,88,.10);
+      margin:14px 0;
+    }
+
+    .list{
+      margin:10px 0 0;
+      padding:0;
+      list-style:none;
+    }
+
     .list li{
       display:flex;
       gap:10px;
       padding:7px 0;
       color:var(--ink);
     }
+
     .dot{
       width:10px;
       height:10px;
@@ -210,11 +281,13 @@
       box-shadow:var(--shadow);
       padding:22px;
     }
+
     h2{
       margin:0 0 10px;
       font-size:24px;
       letter-spacing:-.2px;
     }
+
     p{
       margin:0 0 10px;
       color:var(--muted);
@@ -226,6 +299,7 @@
       grid-template-columns:1fr 1fr;
       gap:18px;
     }
+
     @media (max-width: 900px){
       .grid{grid-template-columns:1fr}
     }
@@ -236,6 +310,7 @@
       gap:16px;
       margin-top:14px;
     }
+
     @media (max-width: 900px){
       .topicGrid{grid-template-columns:1fr}
     }
@@ -247,24 +322,11 @@
       padding:16px;
       box-shadow:0 10px 22px rgba(0,0,0,.06);
     }
+
     .topicCard h3{
       margin:0 0 8px;
       font-size:18px;
       color:var(--bg2);
-    }
-
-    .media{
-      width:100%;
-      border-radius:14px;
-      overflow:hidden;
-      background:var(--soft2);
-      border:1px solid rgba(6,46,88,.10);
-      box-shadow:0 10px 22px rgba(0,0,0,.05);
-    }
-    .media img{
-      width:100%;
-      display:block;
-      height:auto;
     }
 
     .note{
@@ -285,11 +347,13 @@
       border-radius:14px;
       border:1px solid rgba(6,46,88,.10);
     }
+
     .contactBox a{
       text-decoration:none;
       font-weight:850;
       color:var(--bg2);
     }
+
     .contactRow{
       display:flex;
       align-items:center;
@@ -351,19 +415,20 @@
     <div class="hero">
       <div class="heroInner">
         <div class="heroCopy">
-          <div class="badge">Recovery support • Mobility • Soft tissue education</div>
-          <h1>Recovery that supports movement, mobility, and restoration.</h1>
+          <div class="badge">Recovery support • Mobility • Education</div>
+          <h1>Recovery helps the body move better, feel better, and respond better.</h1>
           <p class="lead">
-            Bear’s Den recovery work is built to help clients better understand tension, soft tissue restriction,
-            and how recovery methods can support movement quality. This page is educational and gives a simple overview
-            of recovery concepts including myofascial cupping, cup dragging, and what post-session cupping marks may indicate.
+            Recovery is not just about resting. It is about helping the body restore movement quality,
+            manage tension, improve tissue health, and support better performance in daily life and training.
+            At Bear’s Den, recovery work is meant to help clients understand what is happening in their body
+            and support them with methods that improve comfort, mobility, and function.
           </p>
 
           <div class="pillRow">
-            <div class="pill">Myofascial cupping</div>
-            <div class="pill">Cup dragging</div>
             <div class="pill">Mobility support</div>
             <div class="pill">Recovery education</div>
+            <a href="./cupping.html" class="pill">Cupping</a>
+            <a href="./graston.html" class="pill">Graston</a>
           </div>
         </div>
 
@@ -371,16 +436,16 @@
           <div class="card">
             <h3>Recovery Focus</h3>
             <div class="small">
-              Recovery sessions are designed to support movement quality, reduce the feeling of tightness, and improve
-              understanding of how tension and restriction show up in the body.
+              Recovery sessions are built to support movement quality, reduce the feeling of tightness,
+              improve tissue tolerance, and help clients better understand what their body needs.
             </div>
 
             <div class="divider"></div>
 
             <ul class="list">
-              <li><span class="dot" aria-hidden="true"></span><span><strong>Mobility-minded</strong> recovery approach</span></li>
-              <li><span class="dot" aria-hidden="true"></span><span><strong>One-on-one</strong> instruction and guidance</span></li>
-              <li><span class="dot" aria-hidden="true"></span><span><strong>Educational</strong> explanations clients can understand</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span><strong>Mobility-minded</strong> support for stiff or restricted areas</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span><strong>One-on-one</strong> guidance with a clear, understandable approach</span></li>
+              <li><span class="dot" aria-hidden="true"></span><span><strong>Education-first</strong> recovery so clients know what is being done and why</span></li>
             </ul>
 
             <div class="divider"></div>
@@ -394,82 +459,56 @@
     </div>
 
     <section>
-      <h2>How myofascial cupping works</h2>
+      <h2>What recovery is</h2>
       <div class="grid">
         <div>
           <p>
-            Myofascial cupping uses decompression rather than compression. The idea is to lift tissue, create space
-            between layers, and encourage local circulation. Many clients describe it as the opposite sensation of deep pressure massage.
+            Recovery is the process of helping the body restore balance after stress, training, tension, inactivity,
+            or repetitive movement. It can involve methods that improve circulation, tissue glide, mobility, and how the body feels overall.
           </p>
           <ul class="list">
-            <li><span class="dot" aria-hidden="true"></span><span>Tight or restricted tissue may feel stiff, stuck, and less mobile</span></li>
-            <li><span class="dot" aria-hidden="true"></span><span>The cup creates suction and lifts skin and fascia away from deeper layers</span></li>
-            <li><span class="dot" aria-hidden="true"></span><span>Local blood flow increases and some areas may temporarily mark or discolor</span></li>
-            <li><span class="dot" aria-hidden="true"></span><span>The goal is better glide, better tissue movement, and improved comfort</span></li>
+            <li><span class="dot" aria-hidden="true"></span><span>Supports the body after training, work, or daily wear and tear</span></li>
+            <li><span class="dot" aria-hidden="true"></span><span>Helps reduce the feeling of tightness, stiffness, and restriction</span></li>
+            <li><span class="dot" aria-hidden="true"></span><span>Improves how muscles, fascia, and joints move together</span></li>
+            <li><span class="dot" aria-hidden="true"></span><span>Can support comfort, movement quality, and long-term consistency</span></li>
           </ul>
-          <div class="note">
-            Core idea: tension often feels like compression and stagnation; cupping aims to create lift, flow, and realignment.
-          </div>
-        </div>
-        <div class="media">
-          <img src="./recovery-cupping-1.png" alt="Myofascial cupping therapy educational diagram" />
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <h2>Cup dragging</h2>
-      <div class="grid">
-        <div class="media">
-          <img src="./recovery-cupping-2.png" alt="Cup dragging educational diagram" />
         </div>
         <div>
-          <p>
-            Cup dragging, also called a cupping glide, involves moving the suction cup across tissue rather than leaving it in one place.
-            This can help support circulation across a wider area and may help relieve the feeling of stiffness or adhesions.
-          </p>
-          <ul class="list">
-            <li><span class="dot" aria-hidden="true"></span><span>Lifts fascia and muscle layers</span></li>
-            <li><span class="dot" aria-hidden="true"></span><span>Supports sliding mobility through tissue</span></li>
-            <li><span class="dot" aria-hidden="true"></span><span>May create a pulling or scraping sensation while the cup glides</span></li>
-            <li><span class="dot" aria-hidden="true"></span><span>Often followed by a feeling of release in tight areas</span></li>
-          </ul>
           <div class="note">
-            Core idea: decompression + movement = release + circulation.
+            Recovery is not just something you do after things go wrong. It is something you use to help the body stay functional, adaptable, and prepared.
           </div>
         </div>
       </div>
     </section>
 
     <section>
-      <h2>Cupping marks and what they may mean</h2>
-      <div class="grid">
-        <div>
+      <h2>How recovery works</h2>
+      <div class="topicGrid">
+        <div class="topicCard">
+          <h3>1. Reduce tension</h3>
           <p>
-            Cupping marks are not automatically a sign of damage. They are often a circulation response. Different shades may suggest
-            different levels of stagnation, restriction, or recovery. These are broad educational interpretations rather than exact diagnoses.
+            Recovery methods can help decrease the feeling of tightness and reduce stress in tissues that feel overworked,
+            stiff, or restricted.
           </p>
-          <div class="topicGrid">
-            <div class="topicCard">
-              <h3>Light pink / light red</h3>
-              <p>Often associated with healthy circulation or mild restriction.</p>
-            </div>
-            <div class="topicCard">
-              <h3>Red to dark red</h3>
-              <p>May suggest more noticeable stagnation, tension, or restricted flow.</p>
-            </div>
-            <div class="topicCard">
-              <h3>Dark purple / fading yellow</h3>
-              <p>Darker marks can reflect deeper stagnation; fading yellow often signals recovery and clear-out.</p>
-            </div>
-          </div>
-          <div class="note">
-            Darker marks are not automatically bruises. They commonly fade as the area recovers.
-          </div>
         </div>
-        <div class="media">
-          <img src="./recovery-cupping-3.png" alt="Cupping marks color guide educational diagram" />
+
+        <div class="topicCard">
+          <h3>2. Improve circulation</h3>
+          <p>
+            Better circulation helps bring blood flow to an area, which supports tissue health and how the body responds after effort or strain.
+          </p>
         </div>
+
+        <div class="topicCard">
+          <h3>3. Restore movement</h3>
+          <p>
+            Recovery can help tissues glide better and joints move more comfortably, which supports better mobility and overall movement quality.
+          </p>
+        </div>
+      </div>
+
+      <div class="note">
+        Simple idea: less restriction + better flow + better movement = a body that feels and functions better.
       </div>
     </section>
 
@@ -480,10 +519,12 @@
           <h3>Muscle tightness</h3>
           <p>Support for stiffness, heaviness, and tension that may limit comfortable movement.</p>
         </div>
+
         <div class="topicCard">
           <h3>Mobility support</h3>
           <p>Helps clients improve how tissue glides and how joints and muscles move together.</p>
         </div>
+
         <div class="topicCard">
           <h3>Post-training recovery</h3>
           <p>Useful for clients who want recovery work alongside structured strength and movement coaching.</p>
@@ -492,11 +533,28 @@
     </section>
 
     <section>
+      <h2>Recovery options</h2>
+      <p>
+        If you want to learn more about specific recovery methods, use the buttons below to explore dedicated pages.
+      </p>
+
+      <div class="pillRow">
+        <a href="./cupping.html" class="pill">Cupping</a>
+        <a href="./graston.html" class="pill">Graston</a>
+      </div>
+
+      <div class="note">
+        Each method has its own page so clients can better understand what it is, how it works, and what to expect.
+      </div>
+    </section>
+
+    <section>
       <h2>Interested in recovery work?</h2>
       <p>
-        If you want to learn more about recovery services, cupping, or whether recovery work is appropriate for your goals,
+        If you want to learn more about recovery services or whether recovery work is appropriate for your goals,
         call or email to ask questions and discuss availability.
       </p>
+
       <div class="contactBox" role="region" aria-label="Recovery contact information">
         <div><strong>Service Area:</strong> Lambertville, NJ</div>
         <div><strong>Phone:</strong> <a href="tel:+16093021652">609-302-1652</a></div>
