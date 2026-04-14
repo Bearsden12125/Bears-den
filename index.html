@@ -22,25 +22,43 @@
       --max:1040px;
       --font: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
     }
+
     *{box-sizing:border-box}
+
     body{
       margin:0;
       font-family:var(--font);
       color:var(--ink);
       background:linear-gradient(160deg,var(--bg),var(--bg2));
     }
+
     a{color:inherit}
-    .wrap{max-width:var(--max); margin:0 auto; padding:28px 18px 64px}
+
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:28px 18px 64px;
+    }
+
     header{
       color:#fff;
       padding:22px 0 10px;
     }
+
     .topbar{
-      display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      flex-wrap:wrap;
     }
+
     .brand{
-      display:flex; align-items:center; gap:14px;
+      display:flex;
+      align-items:center;
+      gap:14px;
     }
+
     .logo{
       width:66px;
       height:66px;
@@ -54,6 +72,7 @@
       flex:0 0 66px;
       position:relative;
     }
+
     .logo img{
       width:100%;
       height:100%;
@@ -62,6 +81,7 @@
       display:block;
       background:transparent;
     }
+
     .logoFallback{
       position:absolute;
       inset:0;
@@ -72,14 +92,34 @@
       color:var(--bg2);
       background:rgba(255,255,255,.92);
     }
+
     .title{
-      display:flex; flex-direction:column; line-height:1.05;
+      display:flex;
+      flex-direction:column;
+      line-height:1.05;
     }
-    .title .name{font-size:22px; font-weight:800; letter-spacing:.2px}
-    .title .sub{opacity:.9; font-weight:600}
-    .ctaRow{display:flex; gap:10px; flex-wrap:wrap}
+
+    .title .name{
+      font-size:22px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .title .sub{
+      opacity:.9;
+      font-weight:600;
+    }
+
+    .ctaRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
     .btn{
-      display:inline-flex; align-items:center; justify-content:center;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
       padding:11px 14px;
       border-radius:999px;
       font-weight:700;
@@ -90,13 +130,18 @@
       transition:transform .08s ease, background .15s ease;
       backdrop-filter: blur(6px);
     }
+
     .btn:hover{background:rgba(255,255,255,.16)}
     .btn:active{transform:translateY(1px)}
+
     .btnPrimary{
-      background:#fff; color:var(--bg2);
+      background:#fff;
+      color:var(--bg2);
       border-color:rgba(255,255,255,.9);
     }
+
     .btnPrimary:hover{background:rgba(255,255,255,.92)}
+
     .hero{
       margin-top:18px;
       background:linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,255,255,.90));
@@ -105,19 +150,25 @@
       overflow:hidden;
       position:relative;
     }
+
     .heroInner{
       display:grid;
       grid-template-columns: 1.15fr .85fr;
       gap:0;
     }
+
     @media (max-width: 860px){
       .heroInner{grid-template-columns:1fr}
     }
+
     .heroCopy{
       padding:28px 26px 26px;
     }
+
     .badge{
-      display:inline-flex; align-items:center; gap:8px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       padding:7px 10px;
       border-radius:999px;
       background:var(--soft);
@@ -126,12 +177,17 @@
       letter-spacing:.2px;
       font-size:12.5px;
     }
+
     h1{
       margin:12px 0 10px;
       font-size:36px;
       letter-spacing:-.6px;
     }
-    @media (max-width: 460px){ h1{font-size:30px} }
+
+    @media (max-width: 460px){
+      h1{font-size:30px}
+    }
+
     .lead{
       margin:0 0 16px;
       font-size:16.5px;
@@ -139,7 +195,14 @@
       line-height:1.55;
       max-width:60ch;
     }
-    .pillRow{display:flex; gap:10px; flex-wrap:wrap; margin:16px 0 0}
+
+    .pillRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:16px 0 0;
+    }
+
     .pill{
       background:#fff;
       border:1px solid rgba(6,46,88,.12);
@@ -149,6 +212,7 @@
       color:var(--bg2);
       box-shadow:0 6px 16px rgba(0,0,0,.06);
     }
+
     .heroSide{
       padding:26px;
       background:radial-gradient(900px 240px at 20% 10%, rgba(30,90,168,.22), transparent 55%),
@@ -156,9 +220,11 @@
                  rgba(233,240,251,.8);
       border-left:1px solid rgba(6,46,88,.08);
     }
+
     @media (max-width: 860px){
       .heroSide{border-left:none; border-top:1px solid rgba(6,46,88,.08)}
     }
+
     .card{
       background:#fff;
       border-radius:14px;
@@ -166,7 +232,12 @@
       border:1px solid rgba(6,46,88,.10);
       box-shadow:0 10px 22px rgba(0,0,0,.07);
     }
-    .card h3{margin:0 0 6px; font-size:16px}
+
+    .card h3{
+      margin:0 0 6px;
+      font-size:16px;
+    }
+
     .price{
       font-size:30px;
       font-weight:900;
@@ -174,21 +245,42 @@
       margin:2px 0 6px;
       color:var(--bg2);
     }
-    .small{color:var(--muted); font-size:13.5px; line-height:1.45}
-    .divider{height:1px; background:rgba(6,46,88,.10); margin:14px 0}
-    .list{margin:10px 0 0; padding:0; list-style:none}
+
+    .small{
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.45;
+    }
+
+    .divider{
+      height:1px;
+      background:rgba(6,46,88,.10);
+      margin:14px 0;
+    }
+
+    .list{
+      margin:10px 0 0;
+      padding:0;
+      list-style:none;
+    }
+
     .list li{
-      display:flex; gap:10px;
+      display:flex;
+      gap:10px;
       padding:7px 0;
       color:var(--ink);
     }
+
     .dot{
-      width:10px; height:10px; border-radius:50%;
+      width:10px;
+      height:10px;
+      border-radius:50%;
       background:var(--accent);
       margin-top:6px;
       flex:0 0 10px;
       box-shadow:0 0 0 6px var(--ring);
     }
+
     section{
       margin-top:20px;
       background:rgba(255,255,255,.92);
@@ -196,19 +288,36 @@
       box-shadow:var(--shadow);
       padding:22px;
     }
+
     .grid{
       display:grid;
       grid-template-columns: 1fr 1fr;
       gap:18px;
     }
-    @media (max-width: 860px){ .grid{grid-template-columns:1fr} }
+
+    @media (max-width: 860px){
+      .grid{grid-template-columns:1fr}
+    }
+
     h2{
       margin:0 0 10px;
       font-size:22px;
       letter-spacing:-.2px;
     }
-    p{margin:0 0 10px; color:var(--muted); line-height:1.6}
-    .bullets{margin:8px 0 0; padding-left:18px; color:var(--muted); line-height:1.7}
+
+    p{
+      margin:0 0 10px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    .bullets{
+      margin:8px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.7;
+    }
+
     .note{
       margin-top:10px;
       padding:12px 12px;
@@ -218,6 +327,7 @@
       color:var(--bg2);
       font-weight:700;
     }
+
     .contactBox{
       display:grid;
       gap:10px;
@@ -226,15 +336,55 @@
       border-radius:14px;
       border:1px solid rgba(6,46,88,.10);
     }
+
     .contactBox a{
       text-decoration:none;
       font-weight:850;
       color:var(--bg2);
     }
+
     .contactRow{
-      display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
       margin-top:10px;
     }
+
+    .studioPhotos{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+      margin-top:16px;
+    }
+
+    @media (max-width: 860px){
+      .studioPhotos{grid-template-columns:1fr}
+    }
+
+    .photoCard{
+      background:#fff;
+      border-radius:14px;
+      border:1px solid rgba(6,46,88,.10);
+      box-shadow:0 10px 22px rgba(0,0,0,.07);
+      overflow:hidden;
+    }
+
+    .photoCard img{
+      width:100%;
+      display:block;
+      height:auto;
+      background:#eef4fb;
+    }
+
+    .photoCaption{
+      padding:12px 14px;
+      color:var(--muted);
+      font-size:14px;
+      line-height:1.5;
+    }
+
     footer{
       margin-top:18px;
       color:rgba(255,255,255,.88);
@@ -354,7 +504,7 @@
           </p>
           <div class="contactBox" role="region" aria-label="Contact information">
             <div><strong>Service Area:</strong> Lambertville, NJ</div>
-            <div><strong>Studio location:</strong> Private location (address provided after booking)</div>
+            <div><strong>Studio location:</strong> Private training gym location is disclosed to monthly membership holders.</div>
             <div><strong>Phone:</strong> <a href="tel:+16093021652">609-302-1652</a></div>
             <div><strong>Email:</strong> <a href="mailto:bearsden12125@gmail.com">bearsden12125@gmail.com</a></div>
             <div class="contactRow">
@@ -401,6 +551,30 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Studio Preview</h2>
+      <p>
+        Bear’s Den is a private training space built for focused, calm, appointment-only coaching.
+        For privacy and exclusivity, the private training gym location is disclosed to monthly membership holders.
+      </p>
+
+      <div class="studioPhotos">
+        <div class="photoCard">
+          <img src="./gym-photo-1.png" alt="Bear’s Den private training gym photo 1" />
+          <div class="photoCaption">Private training space designed for focused, personal coaching.</div>
+        </div>
+
+        <div class="photoCard">
+          <img src="./gym-photo-2.png" alt="Bear’s Den private training gym photo 2" />
+          <div class="photoCaption">A calm, professional environment for strength, movement, and long-term progress.</div>
+        </div>
+      </div>
+
+      <div class="note">
+        Monthly membership holders receive location details after joining.
       </div>
     </section>
 
