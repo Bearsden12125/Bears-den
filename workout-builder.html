@@ -1,0 +1,1211 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Bear's Den | Exercise Library & Workout Builder</title>
+
+<style>
+:root{
+  --blue:#0b3b6f;
+  --blue2:#062e58;
+  --accent:#1e5aa8;
+  --soft:#e9f0fb;
+  --white:#ffffff;
+  --ink:#0b1a2a;
+  --muted:#617083;
+  --line:#d9e2ec;
+  --danger:#b42318;
+  --success:#18794e;
+  --shadow:0 14px 35px rgba(0,0,0,.16);
+  --radius:18px;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:linear-gradient(145deg,var(--blue),var(--blue2));
+  color:var(--ink);
+  min-height:100vh;
+}
+
+button,input,select,textarea{
+  font:inherit;
+}
+
+button{
+  cursor:pointer;
+}
+
+header{
+  color:white;
+  padding:22px;
+  border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.headerInner{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.logo{
+  width:62px;
+  height:62px;
+  border-radius:50%;
+  background:white;
+  padding:5px;
+  object-fit:contain;
+}
+
+.brand h1{
+  margin:0;
+  font-size:23px;
+}
+
+.brand p{
+  margin:3px 0 0;
+  color:rgba(255,255,255,.8);
+  font-size:14px;
+}
+
+.topActions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.btn{
+  border:0;
+  border-radius:999px;
+  padding:11px 16px;
+  font-weight:750;
+  transition:.15s;
+}
+
+.btn:hover{
+  transform:translateY(-1px);
+}
+
+.btnWhite{
+  background:white;
+  color:var(--blue2);
+}
+
+.btnBlue{
+  background:var(--accent);
+  color:white;
+}
+
+.btnSoft{
+  background:var(--soft);
+  color:var(--blue2);
+}
+
+.btnDanger{
+  background:#fee4e2;
+  color:var(--danger);
+}
+
+.app{
+  max-width:1400px;
+  margin:auto;
+  padding:22px;
+}
+
+.tabs{
+  display:flex;
+  gap:10px;
+  margin-bottom:18px;
+  flex-wrap:wrap;
+}
+
+.tab{
+  border:1px solid rgba(255,255,255,.25);
+  color:white;
+  background:rgba(255,255,255,.08);
+  padding:11px 18px;
+  border-radius:999px;
+  font-weight:750;
+}
+
+.tab.active{
+  background:white;
+  color:var(--blue2);
+}
+
+.panel{
+  display:none;
+}
+
+.panel.active{
+  display:block;
+}
+
+.surface{
+  background:#f7f9fc;
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+
+.surfaceHeader{
+  padding:20px 22px;
+  background:white;
+  border-bottom:1px solid var(--line);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.surfaceHeader h2{
+  margin:0;
+  font-size:22px;
+}
+
+.surfaceHeader p{
+  margin:3px 0 0;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.libraryTools{
+  padding:18px;
+  display:grid;
+  grid-template-columns:2fr repeat(3,1fr);
+  gap:10px;
+}
+
+.search,
+.field input,
+.field select,
+.field textarea,
+.workoutName{
+  width:100%;
+  border:1px solid var(--line);
+  background:white;
+  padding:12px 13px;
+  border-radius:11px;
+  outline:none;
+}
+
+.search:focus,
+.field input:focus,
+.field select:focus,
+.field textarea:focus,
+.workoutName:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(30,90,168,.12);
+}
+
+.libraryGrid{
+  padding:0 18px 20px;
+  display:grid;
+  grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:15px;
+}
+
+.exerciseCard{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:15px;
+  overflow:hidden;
+  position:relative;
+  transition:.15s;
+}
+
+.exerciseCard:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.exerciseMedia{
+  height:180px;
+  background:#edf2f7;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+.exerciseMedia img,
+.exerciseMedia video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.noMedia{
+  color:#8391a2;
+  text-align:center;
+  font-size:13px;
+}
+
+.cardBody{
+  padding:14px;
+}
+
+.cardBody h3{
+  margin:0 0 5px;
+  font-size:17px;
+}
+
+.meta{
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.5;
+}
+
+.tags{
+  display:flex;
+  gap:5px;
+  flex-wrap:wrap;
+  margin:10px 0;
+}
+
+.tag{
+  padding:5px 8px;
+  background:var(--soft);
+  color:var(--blue2);
+  border-radius:999px;
+  font-size:11px;
+  font-weight:750;
+}
+
+.cardActions{
+  display:flex;
+  gap:7px;
+  margin-top:12px;
+}
+
+.cardActions button{
+  flex:1;
+  border:0;
+  border-radius:9px;
+  padding:9px;
+  font-weight:700;
+}
+
+.empty{
+  padding:60px 20px;
+  text-align:center;
+  color:var(--muted);
+}
+
+.builder{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:650px;
+}
+
+.builderLibrary{
+  border-right:1px solid var(--line);
+}
+
+.builderSide{
+  padding:18px;
+}
+
+.builderSide h3{
+  margin-top:0;
+}
+
+.builderSearch{
+  margin-bottom:15px;
+}
+
+.builderList{
+  display:grid;
+  gap:9px;
+}
+
+.builderExercise{
+  background:white;
+  border:1px solid var(--line);
+  padding:10px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.builderThumb{
+  width:58px;
+  height:58px;
+  border-radius:9px;
+  background:#edf2f7;
+  object-fit:cover;
+}
+
+.builderExerciseInfo{
+  flex:1;
+}
+
+.builderExerciseInfo strong{
+  display:block;
+}
+
+.builderExerciseInfo span{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.addSmall{
+  border:0;
+  background:var(--soft);
+  color:var(--blue2);
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  font-size:20px;
+}
+
+.workoutTop{
+  display:grid;
+  grid-template-columns:1fr auto;
+  gap:10px;
+  margin-bottom:15px;
+}
+
+.workoutItem{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:14px;
+  margin-bottom:12px;
+  overflow:hidden;
+}
+
+.workoutItemHeader{
+  padding:12px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#fbfcfe;
+  border-bottom:1px solid var(--line);
+}
+
+.workoutItemHeader strong{
+  flex:1;
+}
+
+.orderButtons{
+  display:flex;
+  gap:4px;
+}
+
+.iconButton{
+  border:0;
+  background:var(--soft);
+  color:var(--blue2);
+  border-radius:8px;
+  width:31px;
+  height:31px;
+}
+
+.removeButton{
+  background:#fee4e2;
+  color:var(--danger);
+}
+
+.prescription{
+  padding:12px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:9px;
+}
+
+.prescription label{
+  font-size:11px;
+  font-weight:800;
+  color:var(--muted);
+}
+
+.prescription input,
+.prescription select,
+.prescription textarea{
+  margin-top:4px;
+  width:100%;
+  border:1px solid var(--line);
+  border-radius:8px;
+  padding:8px;
+}
+
+.prescription .full{
+  grid-column:1/-1;
+}
+
+.savedWorkout{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:13px;
+  padding:15px;
+  margin-bottom:10px;
+}
+
+.savedWorkout h3{
+  margin:0 0 5px;
+}
+
+.savedWorkout p{
+  color:var(--muted);
+  margin:0 0 10px;
+}
+
+.modalBackdrop{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.65);
+  z-index:1000;
+  padding:20px;
+  overflow:auto;
+}
+
+.modalBackdrop.open{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+}
+
+.modal{
+  width:min(760px,100%);
+  background:white;
+  border-radius:18px;
+  margin:20px auto;
+  overflow:hidden;
+  box-shadow:0 25px 80px rgba(0,0,0,.35);
+}
+
+.modalHeader{
+  position:sticky;
+  top:0;
+  z-index:2;
+  background:white;
+  border-bottom:1px solid var(--line);
+  padding:16px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.modalHeader h2{
+  margin:0;
+}
+
+.close{
+  border:0;
+  background:transparent;
+  font-size:27px;
+}
+
+.form{
+  padding:20px;
+}
+
+.formGrid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  font-size:13px;
+  font-weight:800;
+  color:#435166;
+}
+
+.field textarea{
+  resize:vertical;
+  min-height:95px;
+}
+
+.checkGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:12px;
+  max-height:170px;
+  overflow:auto;
+}
+
+.check{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:13px;
+}
+
+.mediaBox{
+  border:2px dashed #b8c6d6;
+  background:#f7faff;
+  padding:20px;
+  border-radius:13px;
+  text-align:center;
+}
+
+.mediaBox input{
+  margin-top:10px;
+}
+
+.preview{
+  margin-top:14px;
+  display:none;
+  max-height:300px;
+  overflow:hidden;
+  border-radius:12px;
+  background:#edf2f7;
+}
+
+.preview img,
+.preview video{
+  width:100%;
+  max-height:300px;
+  object-fit:contain;
+}
+
+.modalFooter{
+  display:flex;
+  justify-content:flex-end;
+  gap:10px;
+  padding:15px 20px;
+  border-top:1px solid var(--line);
+}
+
+.notice{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  background:#102a43;
+  color:white;
+  padding:12px 16px;
+  border-radius:11px;
+  box-shadow:var(--shadow);
+  display:none;
+  z-index:2000;
+}
+
+@media(max-width:1000px){
+  .libraryGrid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .libraryTools{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media(max-width:800px){
+  .builder{
+    grid-template-columns:1fr;
+  }
+
+  .builderLibrary{
+    border-right:0;
+    border-bottom:1px solid var(--line);
+  }
+
+  .libraryGrid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .app{
+    padding:12px;
+  }
+
+  header{
+    padding:15px;
+  }
+
+  .libraryGrid{
+    grid-template-columns:1fr;
+  }
+
+  .libraryTools,
+  .formGrid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .checkGrid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .prescription{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .prescription .full{
+    grid-column:1/-1;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="headerInner">
+
+    <div class="brand">
+      <img
+        class="logo"
+        src="./logo.png"
+        alt="Bear's Den"
+        onerror="this.style.display='none'"
+      >
+
+      <div>
+        <h1>Bear's Den Training System</h1>
+        <p>Exercise Library &amp; Workout Builder</p>
+      </div>
+    </div>
+
+    <div class="topActions">
+      <button class="btn btnWhite" onclick="openExerciseModal()">
+        + Add Exercise
+      </button>
+    </div>
+
+  </div>
+</header>
+
+
+<main class="app">
+
+  <div class="tabs">
+
+    <button
+      class="tab active"
+      data-panel="libraryPanel"
+      onclick="switchTab(this)"
+    >
+      Exercise Library
+    </button>
+
+    <button
+      class="tab"
+      data-panel="builderPanel"
+      onclick="switchTab(this)"
+    >
+      Workout Builder
+    </button>
+
+    <button
+      class="tab"
+      data-panel="savedPanel"
+      onclick="switchTab(this)"
+    >
+      Saved Workouts
+    </button>
+
+  </div>
+
+
+  <!-- EXERCISE LIBRARY -->
+
+  <section id="libraryPanel" class="panel active surface">
+
+    <div class="surfaceHeader">
+
+      <div>
+        <h2>Exercise Library</h2>
+        <p>
+          Build your Bear's Den exercise database.
+        </p>
+      </div>
+
+      <button
+        class="btn btnBlue"
+        onclick="openExerciseModal()"
+      >
+        + Add Exercise
+      </button>
+
+    </div>
+
+
+    <div class="libraryTools">
+
+      <input
+        id="librarySearch"
+        class="search"
+        placeholder="Search exercises..."
+        oninput="renderLibrary()"
+      >
+
+      <select
+        id="typeFilter"
+        class="search"
+        onchange="renderLibrary()"
+      >
+        <option value="">All Categories</option>
+        <option>Strength</option>
+        <option>Mobility</option>
+        <option>Balance</option>
+        <option>Stability</option>
+        <option>Corrective</option>
+        <option>Recovery</option>
+        <option>Cardio</option>
+        <option>Functional</option>
+      </select>
+
+      <select
+        id="equipmentFilter"
+        class="search"
+        onchange="renderLibrary()"
+      >
+        <option value="">All Equipment</option>
+        <option>Bodyweight</option>
+        <option>Dumbbell</option>
+        <option>Barbell</option>
+        <option>Bench</option>
+        <option>Resistance Band</option>
+        <option>Cable</option>
+        <option>Medicine Ball</option>
+        <option>Machine</option>
+        <option>Other</option>
+      </select>
+
+      <select
+        id="targetFilter"
+        class="search"
+        onchange="renderLibrary()"
+      >
+        <option value="">All Target Areas</option>
+        <option>Upper Body</option>
+        <option>Lower Body</option>
+        <option>Core</option>
+        <option>Hip</option>
+        <option>Knee</option>
+        <option>Ankle</option>
+        <option>Shoulder</option>
+        <option>Back</option>
+        <option>Full Body</option>
+      </select>
+
+    </div>
+
+
+    <div id="libraryGrid" class="libraryGrid"></div>
+
+  </section>
+
+
+  <!-- WORKOUT BUILDER -->
+
+  <section id="builderPanel" class="panel surface">
+
+    <div class="surfaceHeader">
+
+      <div>
+        <h2>Workout Builder</h2>
+        <p>
+          Select exercises from your library and create a workout.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="builder">
+
+      <div class="builderSide builderLibrary">
+
+        <h3>Exercise Library</h3>
+
+        <input
+          id="builderSearch"
+          class="search builderSearch"
+          placeholder="Search exercises..."
+          oninput="renderBuilderLibrary()"
+        >
+
+        <div id="builderLibraryList" class="builderList"></div>
+
+      </div>
+
+
+      <div class="builderSide">
+
+        <h3>Selected Exercises</h3>
+
+        <div class="workoutTop">
+
+          <input
+            id="workoutName"
+            class="workoutName"
+            placeholder="Workout name..."
+          >
+
+          <button
+            class="btn btnBlue"
+            onclick="saveWorkout()"
+          >
+            Save Workout
+          </button>
+
+        </div>
+
+        <div id="selectedExercises"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SAVED WORKOUTS -->
+
+  <section id="savedPanel" class="panel surface">
+
+    <div class="surfaceHeader">
+
+      <div>
+        <h2>Saved Workouts</h2>
+        <p>
+          Your saved Bear's Den workout plans.
+        </p>
+      </div>
+
+    </div>
+
+    <div
+      id="savedWorkouts"
+      style="padding:18px;"
+    ></div>
+
+  </section>
+
+</main>
+
+
+<!-- ADD EXERCISE MODAL -->
+
+<div
+  id="exerciseModal"
+  class="modalBackdrop"
+>
+
+  <div class="modal">
+
+    <div class="modalHeader">
+
+      <h2 id="modalTitle">
+        Add Exercise
+      </h2>
+
+      <button
+        class="close"
+        onclick="closeExerciseModal()"
+      >
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="form">
+
+      <div class="formGrid">
+
+
+        <div class="field full">
+
+          <label>
+            Exercise Name *
+          </label>
+
+          <input
+            id="exerciseName"
+            placeholder="Example: Standing Leg Circles"
+          >
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Category
+          </label>
+
+          <select id="exerciseType">
+
+            <option>Strength</option>
+            <option>Mobility</option>
+            <option>Balance</option>
+            <option>Stability</option>
+            <option>Corrective</option>
+            <option>Recovery</option>
+            <option>Cardio</option>
+            <option>Functional</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Tracking Method
+          </label>
+
+          <select id="trackingMethod">
+
+            <option>Reps</option>
+            <option>Weight + Reps</option>
+            <option>Duration</option>
+            <option>Distance</option>
+            <option>Hold Time</option>
+            <option>Custom</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Per Side
+          </label>
+
+          <select id="perSide">
+
+            <option>No</option>
+            <option>Yes</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Equipment
+          </label>
+
+          <select id="equipment">
+
+            <option>Bodyweight</option>
+            <option>Dumbbell</option>
+            <option>Barbell</option>
+            <option>Bench</option>
+            <option>Resistance Band</option>
+            <option>Cable</option>
+            <option>Medicine Ball</option>
+            <option>Machine</option>
+            <option>Other</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Target Area
+          </label>
+
+          <select id="targetArea">
+
+            <option>Full Body</option>
+            <option>Upper Body</option>
+            <option>Lower Body</option>
+            <option>Core</option>
+            <option>Hip</option>
+            <option>Knee</option>
+            <option>Ankle</option>
+            <option>Shoulder</option>
+            <option>Back</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Movement Pattern
+          </label>
+
+          <select id="movementPattern">
+
+            <option>Other</option>
+            <option>Squat</option>
+            <option>Hinge</option>
+            <option>Push</option>
+            <option>Pull</option>
+            <option>Carry</option>
+            <option>Rotation</option>
+            <option>Anti-Rotation</option>
+            <option>Gait</option>
+            <option>Single-Leg</option>
+            <option>Get-Up</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>
+            Muscle Groups
+          </label>
+
+          <div
+            id="muscleChecks"
+            class="checkGrid"
+          >
+
+            <label class="check">
+              <input type="checkbox" value="Chest">
+              Chest
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Back">
+              Back
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Shoulders">
+              Shoulders
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Biceps">
+              Biceps
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Triceps">
+              Triceps
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Forearms">
+              Forearms
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Abdominals">
+              Abdominals
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Erector Spinae">
+              Erector Spinae
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Glutes">
+              Glutes
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Quadriceps">
+              Quadriceps
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Hamstrings">
+              Hamstrings
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Calves">
+              Calves
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Hip Flexors">
+              Hip Flexors
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Adductors">
+              Adductors
+            </label>
+
+            <label class="check">
+              <input type="checkbox" value="Abductors">
+              Abductors
+            </label>
+
+          </div>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>
+            Exercise Description
+          </label>
+
+          <textarea
+            id="description"
+            placeholder="Describe the exercise and its purpose..."
+          ></textarea>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>
+            Trainer Cues / Technique
+          </label>
+
+          <textarea
+            id="trainerCues"
+            placeholder="Example: Keep the trunk tall. Move from the hip. Use support if balance is limited."
+          ></textarea>
+
+        </div>
+
+
+        <div class="field full">
+
+          <label>
+            Exercise M
